@@ -1,0 +1,204 @@
+/* ================= VARIÁVEIS DE PADRÃO VISUAL ================= */
+/* Facilita a manutenção: alterando aqui, muda no site inteiro */
+:root {
+    --cor-primaria: #1e3a8a;      /* Azul escuro profissional */
+    --cor-secundaria: #3b82f6;    /* Azul claro para destaques */
+    --cor-fundo: #f8fafc;         /* Cinza muito claro para o fundo */
+    --cor-texto: #334155;         /* Cinza escuro para leitura confortável */
+    --cor-branca: #ffffff;
+    --fonte-padrao: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --espacamento-padrao: 20px;
+}
+
+/* ================= RESET E CONFIGURAÇÕES GERAIS ================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--fonte-padrao);
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    line-height: 1.6;
+}
+
+/* Classe utilitária para centralizar e limitar a largura do conteúdo */
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.titulo-secao {
+    text-align: center;
+    color: var(--cor-primaria);
+    font-size: 2rem;
+    margin-bottom: 30px;
+}
+
+/* ================= CABEÇALHO E MENU ================= */
+.cabecalho-principal {
+    background-color: var(--cor-primaria);
+    color: var(--cor-branca);
+    padding: 15px 0;
+}
+
+.cabecalho-principal .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.8rem;
+}
+
+.logo span {
+    color: var(--cor-secundaria);
+}
+
+.menu-navegacao ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.menu-navegacao a {
+    color: var(--cor-branca);
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.menu-navegacao a:hover {
+    color: var(--cor-secundaria);
+}
+
+/* ================= BANNER DE APRESENTAÇÃO ================= */
+.banner-apresentacao {
+    background-color: var(--cor-secundaria);
+    color: var(--cor-branca);
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.banner-apresentacao h2 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.banner-apresentacao p {
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: 0 auto 25px auto;
+}
+
+.botao-destaque {
+    display: inline-block;
+    background-color: var(--cor-primaria);
+    color: var(--cor-branca);
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.botao-destaque:hover {
+    background-color: #172554;
+}
+
+/* ================= SEÇÃO DE CURSOS ================= */
+.secao-cursos {
+    padding: 60px 0;
+}
+
+.grade-cursos {
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+}
+
+.cartao-curso {
+    background-color: var(--cor-branca);
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 25px;
+    flex: 1;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.cartao-curso h3 {
+    color: var(--cor-primaria);
+    margin-bottom: 10px;
+}
+
+.carga-horaria {
+    display: inline-block;
+    margin-top: 15px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: var(--cor-secundaria);
+}
+
+/* ================= SEÇÃO SOBRE NÓS ================= */
+.secao-sobre {
+    background-color: var(--cor-branca);
+    padding: 60px 0;
+    text-align: center;
+    border-top: 1px solid #e2e8f0;
+}
+
+.secao-sobre p {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+}
+
+/* ================= RODAPÉ ================= */
+.rodape-principal {
+    background-color: var(--cor-primaria);
+    color: var(--cor-branca);
+    text-align: center;
+    padding: 30px 0;
+    font-size: 0.95rem;
+}
+
+.rodape-principal p {
+    margin-bottom: 8px;
+}
+
+.copyright {
+    margin-top: 15px;
+    font-size: 0.85rem;
+    opacity: 0.8;
+}
+
+/* ================= ADAPTAÇÃO PARA CELULAR (RESPONSIVIDADE) ================= */
+@media (max-width: 768px) {
+    /* Empilha o logo e o menu verticalmente no celular */
+    .cabecalho-principal .container {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .menu-navegacao ul {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+
+    /* Empilha os cartões de curso um abaixo do outro */
+    .grade-cursos {
+        flex-direction: column;
+    }
+
+    .banner-apresentacao h2 {
+        font-size: 1.8rem;
+    }
+}
